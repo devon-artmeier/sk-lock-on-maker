@@ -63,7 +63,7 @@ function updateAllStatuses()
 	button.disabled = true;
 	
 	if (roms["locked"].data != null && roms["sk"].data != null) {
-		if (!s2Rom || (s2Rom && (roms["kis2"].data != null || forceKiS2))) {
+		if (!s2Rom || (s2Rom && roms["kis2"].data != null)) {
 			button.disabled = false;
 		}
 	}
