@@ -17,12 +17,14 @@
 		involves a mapper which can enable and disable SRAM and the Knuckles in Sonic 2 UPMEM ROM 
 		on the fly, which can't be totally simulated by just combining ROMs. This is merely
 		designed to be a quick and easy way to mimic the lock-on by creating a combined ROM 
-		that you can run in any Sega Genesis emulator. Luckily, with the Knuckles in Sonic 2 
-		UPMEM, that only really gets run when a cartridge with a Sonic 2 serial number is 
-		locked on, and doesn't get turned off. With SRAM, I've added an option to inherit 
-		the SRAM settings from the locked-on ROM's header, so that it can be detected properly 
-		(though, Sonic 3 & Knuckles is usually checked by emulators, so you shouldn't need 
-		to inherit Sonic 3's SRAM settings).</p>
+		that you can run in any Sega Genesis emulator.</p>
+		
+		<p>Luckily, with the Knuckles in Sonic 2 UPMEM, that only really gets run when a cartridge 
+		with a Sonic 2 serial number is locked on, and doesn't get turned off. With SRAM, I've added 
+		an option to inherit the SRAM settings from the locked-on ROM's header, so that it can be 
+		detected properly (though, Sonic 3 & Knuckles is usually checked by emulators, so you shouldn't 
+		need to inherit Sonic 3's SRAM settings). That setting is only any useful if you use an exploit 
+		to start executing the locked-on cartridge's code and manage SRAM from there.</p>
 
 		<p>Sonic & Knuckles ROM (Max size: 2 MiB)</p>
 		<input type="file" name="file" id="sk-rom">
