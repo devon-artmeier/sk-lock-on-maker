@@ -6,49 +6,51 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<h1>Sonic & Knuckles Lock-On ROM Maker</h1>
+		<div id="content">
+			<h1>Sonic & Knuckles Lock-On ROM Maker</h1>
 
-		<p>This tool simulates a Sega Genesis game being locked onto Sonic & Knuckles by 
-		combining their ROMs similar to how it would be done on a real Sonic & Knuckles cartridge. 
-		To get Knuckles in Sonic 2, you will also need the Knuckles in Sonic 2 UPMEM ROM, 
-		which will only be applied if a Sonic 2 serial number is found in the locked-on 
-		cartridge ROM (unless you set the option to force it to be applied).</p>
-		
-		<p>Do note that this isn't a 100% simulation of how the lock-on actually works. That
-		involves a mapper which can enable and disable SRAM and the Knuckles in Sonic 2 UPMEM ROM 
-		on the fly, which can't be totally simulated by just combining ROMs. This is merely
-		designed to be a quick and easy way to mimic the lock-on by creating a combined ROM 
-		that you can run in any Sega Genesis emulator.</p>
-		
-		<p>Luckily, with the Knuckles in Sonic 2 UPMEM, that only really gets run when a cartridge 
-		with a Sonic 2 serial number is locked on, and doesn't get turned off. With SRAM, I've added 
-		an option to inherit the SRAM settings from the locked-on ROM's header, so that it can be 
-		detected properly (though, Sonic 3 & Knuckles is usually checked by emulators, so you shouldn't 
-		need to inherit Sonic 3's SRAM settings). That setting is only any useful if you use an exploit 
-		to start executing the locked-on cartridge's code and manage SRAM from there.</p>
+			<p>This tool simulates a Sega Genesis game being locked onto Sonic & Knuckles by 
+			combining their ROMs similar to how it would be done on a real Sonic & Knuckles cartridge. 
+			To get Knuckles in Sonic 2, you will also need the Knuckles in Sonic 2 UPMEM ROM, 
+			which will only be applied if a Sonic 2 serial number is found in the locked-on 
+			cartridge ROM (unless you set the option to force it to be applied).</p>
+			
+			<p>Do note that this isn't a 100% simulation of how the lock-on actually works. That
+			involves a mapper which can enable and disable SRAM and the Knuckles in Sonic 2 UPMEM ROM 
+			on the fly, which can't be totally simulated by just combining ROMs. This is merely
+			designed to be a quick and easy way to mimic the lock-on by creating a combined ROM 
+			that you can run in any Sega Genesis emulator.</p>
+			
+			<p>Luckily, with the Knuckles in Sonic 2 UPMEM, that only really gets run when a cartridge 
+			with a Sonic 2 serial number is locked on, and doesn't get turned off. With SRAM, I've added 
+			an option to inherit the SRAM settings from the locked-on ROM's header, so that it can be 
+			detected properly (though, Sonic 3 & Knuckles is usually checked by emulators, so you shouldn't 
+			need to inherit Sonic 3's SRAM settings). That setting is only any useful if you use an exploit 
+			to start executing the locked-on cartridge's code and manage SRAM from there.</p>
 
-		<p>Sonic & Knuckles ROM (Max size: 2 MiB)</p>
-		<input type="file" name="file" id="sk-rom">
+			<p>Sonic & Knuckles ROM (Max size: 2 MiB)</p>
+			<input type="file" name="file" id="sk-rom">
 
-		<p>Locked-on ROM (Max size: 4 MiB)</p>
-		<input type="file" name="file" id="locked-rom">
-		
-		<p>Knuckles in Sonic 2 UPMEM ROM (Max size: 1 MiB)</p>
-		<input type="file" name="file" id="kis2-rom">
+			<p>Locked-on ROM (Max size: 4 MiB)</p>
+			<input type="file" name="file" id="locked-rom">
+			
+			<p>Knuckles in Sonic 2 UPMEM ROM (Max size: 1 MiB)</p>
+			<input type="file" name="file" id="kis2-rom">
 
-		<p>
-			<input type="checkbox" id="inherit-sram">
-			<label for="inherit-sram">Inherit locked-on ROM's SRAM settings</label><br>
-			<input type="checkbox" id="force-kis2">
-			<label for="checkbox">Force Knuckles in Sonic 2 UPMEM ROM mapping</label><br>
-		</p>
-		
-		<p id="sk-status"></p>
-		<p id="locked-status"></p>
-		<p id="kis2-status"></p>
+			<p>
+				<input type="checkbox" id="inherit-sram">
+				<label for="inherit-sram">Inherit locked-on ROM's SRAM settings</label><br>
+				<input type="checkbox" id="force-kis2">
+				<label for="checkbox">Force Knuckles in Sonic 2 UPMEM ROM mapping</label><br>
+			</p>
+			
+			<p id="sk-status"></p>
+			<p id="locked-status"></p>
+			<p id="kis2-status"></p>
 
-		<button id="combine-button" onclick="combineRoms()">Lock-On!</button>
-		<a id="download" download="sk-lock-on.gen"></a>
+			<button id="combine-button" onclick="combineRoms()">Lock-On!</button>
+			<a id="download" download="sk-lock-on.gen"></a>
+		</div>
 
 		<script src="md5.js"></script>
 		<script src="lock-on.js"></script>

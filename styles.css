@@ -1,9 +1,13 @@
-.error-text
-{
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px;
+}
+
+.error-text {
 	color: red;
 }
 
-.warn-text
-{
+.warn-text {
 	color: orange;
 }
